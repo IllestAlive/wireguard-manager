@@ -909,9 +909,9 @@ if [ ! -f "${WIREGUARD_CONFIG}" ]; then
             fi
           fi
         elif { [ "${CURRENT_DISTRO}" == "centos" ] || [ "${CURRENT_DISTRO}" == "rhel" ] || [ "${CURRENT_DISTRO}" == "almalinux" ] || [ "${CURRENT_DISTRO}" == "rocky" ]; }; then
-          yum install unbound -y
+          yum install unbound openresolv -y
         elif [ "${CURRENT_DISTRO}" == "fedora" ]; then
-          dnf install unbound resolvconf -y
+          dnf install unbound openresolv -y
         elif { [ "${CURRENT_DISTRO}" == "arch" ] || [ "${CURRENT_DISTRO}" == "archarm" ] || [ "${CURRENT_DISTRO}" == "manjaro" ]; }; then
           pacman -Syu --noconfirm unbound resolvconf
         elif [ "${CURRENT_DISTRO}" == "alpine" ]; then
